@@ -219,3 +219,6 @@ __marimo__/
 .agents/skills/
 .claude/skills/
 skills-lock.json
+
+# MacOS
+.DS_Store
