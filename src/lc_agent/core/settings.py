@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from pydantic import DirectoryPath
+from pydantic import DirectoryPath, FilePath
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
@@ -13,6 +13,7 @@ class AppSettings(BaseSettings):
 
     model: str
     model_api_key: str
+    system_prompt_file: FilePath = FilePath("src/lc_agent/core/system_prompt.md")
     tavily_api_key: str
     db_path: Path
     workspace_root: DirectoryPath
