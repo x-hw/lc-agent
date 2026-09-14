@@ -4,6 +4,7 @@ version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.12"
+
 dependencies = [
     "langchain>=1.4.0",
     "langchain-openrouter>=0.2.8",
@@ -11,7 +12,13 @@ dependencies = [
     "pydantic>=2.13.5",
     "pydantic-settings>=2.15.0",
     "pytest>=9.1.1",
+    "typer>=0.20.0",
+    "prompt-toolkit>=3.0.0",
+    "langchain-tavily>=0.2.18",
 ]
+
+[project.scripts]
+lc-agent = "lc_agent.cli.app:app"
 
 [build-system]
 requires = ["hatchling"]
