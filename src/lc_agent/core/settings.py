@@ -13,10 +13,13 @@ class AppSettings(BaseSettings):
 
     model: str
     model_api_key: str
-    system_prompt_file: FilePath = FilePath("src/lc_agent/core/system_prompt.md")
+    model_max_tokens: int
     tavily_api_key: str
+    system_prompt_file: FilePath = FilePath(
+        Path(__file__).with_name("system_prompt.md")
+    )
     db_path: Path
     workspace_root: DirectoryPath
 
 
-app_settings = AppSettings()
+app_settings = AppSettings()  # type: ignore[call-arg]

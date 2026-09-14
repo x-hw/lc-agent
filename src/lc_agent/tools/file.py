@@ -4,6 +4,7 @@ from langchain.tools import tool
 
 
 def make_list_directory_tool(workspace_root: Path):
+    """Create a tool that lists one level of a workspace directory."""
 
     @tool
     def list_directory(path: str = ".") -> str:
@@ -15,6 +16,7 @@ def make_list_directory_tool(workspace_root: Path):
 
 
 def make_read_text_file_tool(workspace_root: Path, max_chars: int = 5000):
+    """Create a tool that reads a bounded text file from the workspace."""
 
     @tool
     def read_text_file(path: str) -> str:
